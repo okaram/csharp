@@ -1,0 +1,9 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Height="325" Width="250">
+      <StackPanel Orientation="Vertical">
+        <Button Command="{Binding Path=ButtonClicked}" CommandParameter="0">Click me</Button>
+        <Button Command="{Binding Path=ButtonClicked2}" CommandParameter="0">Click me 2</Button>
+        <Button Command="{Binding Path=ButtonClicked3}">Click me 3</Button>
+       </StackPanel>
+</UserControl>

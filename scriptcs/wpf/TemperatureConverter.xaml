@@ -1,0 +1,30 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      >
+      <StackPanel Orientation="Vertical">
+		<Label>Farenheit</Label>
+		<TextBox Text="{Binding Path=Farenheit}"></TextBox>
+        <Button Command="{Binding Path=ButtonClicked}" CommandParameter="0">Convert</Button>
+		<Label>Celsius</Label>
+		<Label Content="{Binding Path=Celsius}"></Label>
+		
+		<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition />
+					<RowDefinition />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition />
+					<ColumnDefinition />
+					<ColumnDefinition />
+				</Grid.ColumnDefinitions>
+
+			<Label Grid.Row="0" Grid.Column="0">Fahrenheit</Label>
+			<Label Grid.Row="0" Grid.Column="2">Celsius</Label>
+			<Button Grid.Row="0" Grid.Column="1" Command="{Binding Path=Faren2Celsius}"> > </Button>
+			<Button Grid.Row="1" Grid.Column="1" Command="{Binding Path=Celsius2Faren}"> &lt; </Button>
+			<TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Path=Farenheit}" Width="100"></TextBox>
+			<TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=Celsius}" Width="100"></TextBox>
+		</Grid>
+       </StackPanel>
+</UserControl>
