@@ -1,4 +1,4 @@
 # scriptcs
-These are simple C# programs using ScriptCS, instead of full VS projects etc.
+These are simple C# programs using (ScriptCS)[http://scriptcs.net], instead of full VS projects etc.
 
-* wpf is for WPF samples
+* (wpf)[wpf] is for WPF samples
