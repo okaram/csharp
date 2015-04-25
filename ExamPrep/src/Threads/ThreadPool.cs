@@ -20,21 +20,16 @@ public static void ThreadMethod(object who) // string would be nicer, but Parame
 }
 
 
-Thread t1 = new Thread( ThreadMethod1); // can create a thread from a method
-t1.Start();
 
-Thread t2 = new Thread( () => ThreadMethod("two")); // or a lambda
-t2.IsBackground=true; // if it's a background thread, program can terminate before the thread
-t2.Start();
-
-Thread t3 = new Thread( new ParameterizedThreadStart(ThreadMethod)); // or ParameterizedThreadStart
-t3.IsBackground=true; // notice background
-t3.Start("three");
-
+// instead of
+// Thread t2 = new Thread( () => ThreadMethod("two")); 
+for (int i = 0; i < 10; i++) {
+	ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadMethod),i); // notice we need to pass the i, or it may get captured
+}
 for (int i = 0; i < 5; i++)
 {
 	Console.WriteLine("Main thread: Do some work.");
 	Thread.Sleep(1);
 }
-// could do things like
-//t1.Join();
+
+Thread.Sleep(100); // to let all threads in the pool finish
